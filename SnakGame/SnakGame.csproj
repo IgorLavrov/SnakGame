@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,7 @@
     <Compile Include="GameOver.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="FoodCreator.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Snake.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="HorizontallLine.cs" />
@@ -57,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ResultTable.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
