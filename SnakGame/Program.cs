@@ -24,7 +24,7 @@ namespace SnakGame
 
             int count = 0;
             int n = 0;
-            String s, subkey, key;
+            string s, subkey, key;
 
             Player[] pr = new Player[1000] ;          
             for (int i = 0; i < pr.Length; i++)
@@ -42,10 +42,24 @@ namespace SnakGame
                 switch (key)
                 {
                     case "1":
-                            Console.WriteLine("Enter your Name: ");
-                            s = Console.ReadLine(); pr[n].Fam = s;
-                            pr[n].Score = count;
-                            n++;
+                        string text;
+                        Console.WriteLine("Enter your Name: ");
+                        s = Console.ReadLine(); pr[n].Fam = s;
+                        pr[n].Score = count;
+                       
+                        n++; 
+                        StreamWriter to_file = new StreamWriter("ResultTable.txt", true);
+                        text = pr[n].Fam + " " + pr[n].Score.ToString();
+                        to_file.WriteLine(text + ";");
+   
+                        to_file.Close();
+                        /*
+                        StreamReader from_file = new StreamReader("ResultTable.txt");
+                        string text2 = from_file.ReadToEnd();
+                        Console.WriteLine(text2);
+                        from_file.Close();
+                        Console.ReadLine();*/
+
                         break;
                      
                     case "2":               
