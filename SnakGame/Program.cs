@@ -52,8 +52,7 @@ namespace SnakGame
                         for (int i = 0; i < n; i++)
                         {
                             pr[i].Show();
-                            Console.WriteLine
-                                ();
+                            Console.WriteLine();
                         }
                         break;
 
