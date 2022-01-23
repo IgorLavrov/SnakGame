@@ -26,7 +26,7 @@ namespace SnakGame
             int n = 0;
             String s, subkey, key;
 
-            Player[] pr = new Player[100] ;          
+            Player[] pr = new Player[1000] ;          
             for (int i = 0; i < pr.Length; i++)
             { pr[i] = new Player(); }
             do                               
@@ -42,7 +42,7 @@ namespace SnakGame
                 switch (key)
                 {
                     case "1":
-                            Console.WriteLine("Enter your Surname and Name: ");
+                            Console.WriteLine("Enter your Name: ");
                             s = Console.ReadLine(); pr[n].Fam = s;
                             pr[n].Score = count;
                             n++;
