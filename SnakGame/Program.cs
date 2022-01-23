@@ -56,28 +56,11 @@ namespace SnakGame
 
             }
 
-            EndOfGame(count);
+            GameOver snake2 = new GameOver();
+            snake2.EndOfGame(count);
             Console.ReadLine();
         }
 
-        static void EndOfGame(int score)
-        {  
-            int xOffset = 25;
-            int yOffset = 8;
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(xOffset, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("Game Over", xOffset + 1, yOffset++);
-            WriteText("Your score : "+ score, xOffset + 2, yOffset++);
-            WriteText("Author:  Targv21", xOffset + 3, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
-        }
-
-        static void WriteText(String text, int xOffset, int yOffset)
-        {
-            Console.SetCursorPosition(xOffset, yOffset);
-            Console.WriteLine(text);
-        }
-
+       
     }
 }
