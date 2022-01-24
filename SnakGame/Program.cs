@@ -102,6 +102,7 @@ namespace SnakGame
                                 }
 
                             }
+                            Console.Clear();
                             GameOver snake2 = new GameOver();
                             snake2.EndOfGame(count);
                             Console.ReadLine();
