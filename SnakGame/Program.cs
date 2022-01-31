@@ -58,7 +58,7 @@ namespace SnakGame
 
                         break;
                      
-                    case "2":
+                     case "2":
                         Console.Clear();
                         for (int i = 0; i < n; i++)
                         {
@@ -68,7 +68,8 @@ namespace SnakGame
                         }
                         break;
 
-                    case "3":
+                     case "3":
+
                         Console.Clear();
                         walls.Draw();
                         snake.Drow();
@@ -104,6 +105,8 @@ namespace SnakGame
                             GameOver snake2 = new GameOver();
                             snake2.EndOfGame(count);
                             Console.ReadLine();
+                            Console.Clear();
+                        break;
 
                         }
                 
