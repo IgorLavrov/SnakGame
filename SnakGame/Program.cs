@@ -100,12 +100,10 @@ namespace SnakGame
                                 }
 
                             }
-                        
-                        GameOver snake2 = new GameOver();
-                        snake2.EndOfGame(count);
-                        Console.ReadLine();
-                        Console.Clear();
-                            break;
+                            Console.Clear();
+                            GameOver snake2 = new GameOver();
+                            snake2.EndOfGame(count);
+                            Console.ReadLine();
 
                         }
                 
