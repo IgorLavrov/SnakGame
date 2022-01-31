@@ -28,9 +28,9 @@ namespace SnakGame
                 set                    //код - установка значения полей возраст и статус
                 {
                     score = value;
-                    if (score < 2) status = " Child";
+                    if (score < 2) status = "Child";
                     else if (score < 7) status = "Scholar";
-                    else if (score < 12) status = " Mature";
+                    else if (score < 12) status = "Mature";
                     else status = "Expert";
 
                 }

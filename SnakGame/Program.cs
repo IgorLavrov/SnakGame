@@ -18,10 +18,11 @@ namespace SnakGame
 
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
+            Menu menu = new Menu();
 
             FoodCreator foodCreator = new FoodCreator(40, 10, '$');
             Point food = foodCreator.CreateFood();
-
+            int x = 100;
             int count = 0;
             int n = 0;
             string s, subkey, key;
@@ -31,28 +32,23 @@ namespace SnakGame
             { pr[i] = new Player(); }
             do                               
             {
-                Console.WriteLine("***Menu***");
-                Console.WriteLine("1 - Make  a record ");
-                Console.WriteLine("2 - Show Result");
-                Console.WriteLine("3 - Play");
-                Console.WriteLine("4 - Exit");
-                Console.WriteLine();
-                Console.WriteLine(" Your Choose...");
+                menu.Start();
                 key = Console.ReadLine();
                 switch (key)
                 {
                     case "1":
+                        Console.Clear();
                         string text;
                         Console.WriteLine("Enter your Name: ");
                         s = Console.ReadLine(); pr[n].Fam = s;
                         pr[n].Score = count;
-                       
                         n++; 
-                        StreamWriter to_file = new StreamWriter("ResultTable.txt", true);
+                        StreamWriter to_file = new StreamWriter(@"ResultTable.txt", true);
                         text = pr[n].Fam + " " + pr[n].Score.ToString();
                         to_file.WriteLine(text + ";");
-   
                         to_file.Close();
+                       
+
                         /*
                         StreamReader from_file = new StreamReader("ResultTable.txt");
                         string text2 = from_file.ReadToEnd();
@@ -62,11 +58,13 @@ namespace SnakGame
 
                         break;
                      
-                    case "2":               
+                    case "2":
+                        Console.Clear();
                         for (int i = 0; i < n; i++)
                         {
                             pr[i].Show();
                             Console.WriteLine();
+                           
                         }
                         break;
 
@@ -92,7 +90,7 @@ namespace SnakGame
                                 {
                                     snake.Move();
                                 }
-                                Thread.Sleep(100);
+                                Thread.Sleep(x);
 
                                 if (Console.KeyAvailable)
                                 {
@@ -102,11 +100,13 @@ namespace SnakGame
                                 }
 
                             }
-                            GameOver snake2 = new GameOver();
-                            snake2.EndOfGame(count);
-                            Console.ReadLine();
-
+                        
+                        GameOver snake2 = new GameOver();
+                        snake2.EndOfGame(count);
+                        Console.ReadLine();
+                        Console.Clear();
                             break;
+
                         }
                 
                 } while (key != "4") ;
